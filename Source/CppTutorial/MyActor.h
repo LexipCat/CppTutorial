@@ -10,6 +10,9 @@ UCLASS()
 class CPPTUTORIAL_API AMyActor : public AActor
 {
 	GENERATED_BODY()
+
+private:
+
 	
 public:	
 	// Sets default values for this actor's properties
