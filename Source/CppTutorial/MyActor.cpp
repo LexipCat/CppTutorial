@@ -11,6 +11,18 @@ AMyActor::AMyActor()
 
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MESH"));
 
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> StaticMesh(TEXT("/Script/Engine.StaticMesh'/Game/ParagonRevenant/FX/Meshes/Heroes/SM_PlasmaShot_Shell.SM_PlasmaShot_Shell'"));
+
+	if (StaticMesh.Succeeded())
+	{
+		UE_LOG(LogTemp, Log, TEXT("Succeeded"));
+		Mesh->SetStaticMesh(StaticMesh.Object);
+	}
+	else
+	{
+		UE_LOG(LogTemp, Log, TEXT("Faild"));
+	}
+
 }
 
 // Called when the game starts or when spawned
